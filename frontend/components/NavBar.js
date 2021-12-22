@@ -1,3 +1,37 @@
+import {Nav,NavDropdown} from 'react-bootstrap'
+import Layout from "../components/Layout";
+
+
+// export default function NavDropdownExample() {
+//     const handleSelect = (eventKey) => alert(`selected ${eventKey}`);
+  
+//     return (
+        
+//       <Nav variant="pills" activeKey="1" onSelect={handleSelect}>
+      
+//         <Nav.Item>
+//           <Nav.Link eventKey="2" title="Item">
+//             NavLink 2 content
+//           </Nav.Link>
+//         </Nav.Item>
+//         <Nav.Item>
+//           <Nav.Link eventKey="3" disabled>
+//             NavLink 3 content
+//           </Nav.Link>
+//         </Nav.Item>
+//         <NavDropdown title="Dropdown" id="nav-dropdown">
+//           <NavDropdown.Item eventKey="4.1">Action</NavDropdown.Item>
+//           <NavDropdown.Item eventKey="4.2">Another action</NavDropdown.Item>
+//           <NavDropdown.Item eventKey="4.3">Something else here</NavDropdown.Item>
+//           <NavDropdown.Divider />
+//           <NavDropdown.Item eventKey="4.4">Separated link</NavDropdown.Item>
+//         </NavDropdown>
+//       </Nav>
+      
+//     );
+//   }
+  
+
 import React from "react";
 import Link from "next/link";
 
@@ -27,18 +61,7 @@ const NavBar = () => {
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto">
-          <li className="nav-item">
-              <Link href="/about">
-                <a
-                  className={
-                    "nav-link " +
-                    `${router.pathname === "/about" ? "active" : ""}`
-                  }
-                >
-                  About
-                </a>
-              </Link>
-            </li>
+         
             <li className="nav-item">
               <Link href="/">
                 <a
@@ -51,6 +74,20 @@ const NavBar = () => {
                 </a>
               </Link>
             </li>
+
+            <li className="nav-item">
+              <Link href="/SignIn">
+                <a
+                  className={
+                    "nav-link " +
+                    `${router.pathname === "/SignIn" ? "active" : ""}`
+                  }
+                >
+                  SignIn
+                </a>
+              </Link>
+            </li>
+
             
             <li className="nav-item">
               <Link href="/Contact">
@@ -62,21 +99,46 @@ const NavBar = () => {
                 >
 
                   Contact
-                  
+
                 </a>
               </Link>
             </li>
             <li className="nav-item">
-              <Link href="/ghada">
+              <Link href="/teacher">
                 <a
                   className={
                     "nav-link " +
-                    `${router.pathname === "/ghada" ? "active" : ""}`
+                    `${router.pathname === "/teacher" ? "active" : ""}`
                   }
                 >
-                  ghada
+              Teacher
                 </a>
               </Link>
+            </li>
+            {/* <li className="nav-item">
+              <select>
+                <option>
+                <Link href="/teacher">
+                <a
+                  className={
+                    "nav-link " +
+                    `${router.pathname === "/teacher" ? "active" : ""}`
+                  }
+                >
+              Teacher
+                </a>
+              </Link>
+                </option>
+              </select>
+            </li> */}
+            <li className="nav-item">
+            <NavDropdown title="Dropdown" id="nav-dropdown">
+          <NavDropdown.Item eventKey="4.1">Action</NavDropdown.Item>
+          <NavDropdown.Item eventKey="4.2">Another action</NavDropdown.Item>
+          <NavDropdown.Item eventKey="4.3">Something else here</NavDropdown.Item>
+          <NavDropdown.Divider />
+          <NavDropdown.Item eventKey="4.4">Separated link</NavDropdown.Item>
+         </NavDropdown>   
             </li>
           </ul>
         </div>
